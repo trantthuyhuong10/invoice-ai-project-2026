@@ -1,5 +1,7 @@
 #Day1
+from distro import info
 from fastapi import FastAPI, UploadFile, File
+from sqlalchemy import text
 
 app = FastAPI()
 
@@ -55,26 +57,3 @@ def chat(file_path: str, question: str):
         "data": info
     }
     
-#OpenAI
-from services.chat_service import chat_with_invoice_llm
-
-@app.post("/chat-llm")
-@app.post("/chat-llm")
-def chat_llm(file_path: str, question: str):
-    try:
-        text = extract_text_from_pdf(file_path)
-        print("TEXT LENGTH:", len(text))
-
-        text = text[:2000]
-
-        answer = chat_with_invoice_llm(question, text)
-
-        return {
-            "answer": answer
-        }
-
-    except Exception as e:
-        print("ERROR:", str(e))
-        return {
-            "error": str(e)
-        }
