@@ -28,7 +28,6 @@
 
 ## 🧠 System Architecture
 
-```text id="0q7v1u"
         PDF
          ↓
         OCR
@@ -42,7 +41,6 @@
      Chatbot API
          ↓
      Streamlit UI
-```
 
 ---
 
@@ -80,7 +78,6 @@ invoice-ai/
 ├── Dockerfile
 ├── requirements.txt
 └── README.md
-```
 
 ---
 
@@ -88,8 +85,7 @@ invoice-ai/
 
 ### 🔹 Run locally
 
-```bash id="qmb0wv"
-git clone <your-repo-url>
+git clone https://github.com/trantthuyhuong10/invoice-ai-project-2026.git
 cd invoice-ai
 
 python3 -m venv venv
@@ -99,7 +95,6 @@ pip install -r requirements.txt
 
 uvicorn main:app --reload
 streamlit run app.py
-```
 
 👉 API Docs: http://localhost:8000/docs
 👉 UI: http://localhost:8501
@@ -108,10 +103,8 @@ streamlit run app.py
 
 ### 🐳 Run with Docker
 
-```bash id="qk9yql"
 docker build -t invoice-ai .
 docker run -p 8000:8000 invoice-ai
-```
 
 ---
 
